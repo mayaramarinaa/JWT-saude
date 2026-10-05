@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="/style.css">
+  <title>Acesso | Clínica</title>
+</head>
+<body>
+  <main class="auth-page">
+    <section class="auth-container">
+      <div class="brand">
+        <span class="brand-badge">CLÍNICA</span>
+        <h1>Portal de Saúde</h1>
+      </div>
+
+      <div class="auth-grid">
+        <section class="card">
+          <h2>Entrar</h2>
+          <p class="muted">Acesse sua conta de médico ou paciente.</p>
+
+          <form onsubmit="event.preventDefault(); login();">
+            <label for="emailLogin">E-mail</label>
+            <input
+              id="emailLogin"
+              type="email"
+              placeholder="email@exemplo.com"
+              required
+            >
+
+            <label for="senhaLogin">Senha</label>
+            <input
+              id="senhaLogin"
+              type="password"
+              placeholder="Sua senha"
+              required
+            >
+
+            <button class="primary" type="submit">Entrar</button>
+          </form>
+
+          <p id="statusLogin" class="message"></p>
+        </section>
+
+        <section class="card">
+          <h2>Criar conta</h2>
+          <p class="muted">Crie uma conta para acessar o portal.</p>
+
+          <form id="formCadastro" onsubmit="event.preventDefault(); cadastrar();">
+            <label for="perfilCadastro">Perfil</label>
+            <select id="perfilCadastro" onchange="atualizarCamposPerfil()" required>
+              <option value="paciente">Paciente</option>
+              <option value="medico">Médico</option>
+            </select>
+
+            <label for="nomeCadastro">Nome completo</label>
+            <input id="nomeCadastro" autocomplete="name" required>
+
+            <label for="emailCadastro">E-mail</label>
+            <input id="emailCadastro" type="email" autocomplete="email" required>
+
+            <div id="camposPaciente">
+              <label for="cpfCadastro">CPF</label>
+              <input id="cpfCadastro" autocomplete="off" inputmode="numeric">
+            </div>
+
+            <div id="camposMedico" class="hidden">
+              <label for="crmCadastro">CRM</label>
+              <input id="crmCadastro" autocomplete="off">
+
+              <label for="especialidadeCadastro">Especialidade</label>
+              <input id="especialidadeCadastro" autocomplete="off">
+            </div>
+
+            <label for="senhaCadastro">Senha (mínimo 8 caracteres)</label>
+            <input id="senhaCadastro" type="password" minlength="8" autocomplete="new-password" required>
+
+            <button class="primary" type="submit">Criar conta</button>
+          </form>
+          <p id="statusCadastro" class="message"></p>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="/auth.js"></script>
+</body>
+</html>

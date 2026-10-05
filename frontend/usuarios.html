@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="/style.css">
+  <title>Portal | Clínica</title>
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <strong>Portal de Saúde</strong>
+      <span id="subtituloPerfil" class="topbar-subtitle">Área protegida</span>
+    </div>
+    <button class="secondary small" onclick="logout()">Sair</button>
+  </header>
+
+  <main class="dashboard">
+    <section class="hero">
+      <div>
+        <span id="saudacaoPerfil" class="eyebrow">Área do paciente</span>
+        <h1 id="tituloPerfil">Meu perfil</h1>
+        <p id="descricaoPerfil">Seus dados de acesso e identificação.</p>
+      </div>
+      <button id="atualizarLista" class="primary action-button hidden" onclick="listarUsuarios()">Atualizar lista</button>
+    </section>
+
+    <section id="perfilPessoal" class="card profile-card">
+      <h2>Dados da conta</h2>
+      <dl id="dadosPerfil" class="profile-details"></dl>
+    </section>
+
+    <section id="areaAdmin" class="grid-dashboard hidden">
+      <section class="card">
+        <h2>Novo usuário</h2>
+
+        <label for="nomeNovo">Nome</label>
+        <input id="nomeNovo" placeholder="Nome completo">
+
+        <label for="emailNovo">E-mail</label>
+        <input id="emailNovo" type="email" placeholder="email@exemplo.com">
+
+        <label for="senhaNovo">Senha</label>
+        <input id="senhaNovo" type="password" placeholder="Senha">
+
+        <label for="roleNovo">Perfil</label>
+        <select id="roleNovo">
+          <option value="paciente">Paciente</option>
+          <option value="medico">Médico</option>
+          <option value="admin">Administrador</option>
+        </select>
+
+        <div id="camposPacienteNovo">
+          <label for="cpfNovo">CPF</label>
+          <input id="cpfNovo" inputmode="numeric">
+        </div>
+
+        <div id="camposMedicoNovo" class="hidden">
+          <label for="crmNovo">CRM</label>
+          <input id="crmNovo">
+          <label for="especialidadeNovo">Especialidade</label>
+          <input id="especialidadeNovo">
+        </div>
+
+        <button class="primary" onclick="criarUsuario()">Criar usuário</button>
+        <p id="statusCrud" class="message"></p>
+      </section>
+
+      <section class="card users-card">
+        <div class="section-title">
+          <div>
+            <h2>Usuários cadastrados</h2>
+            <p class="muted">Dados carregados pela API protegida.</p>
+          </div>
+        </div>
+
+        <div id="usuarios" class="user-list"></div>
+      </section>
+    </section>
+  </main>
+
+  <script src="/usuarios.js"></script>
+</body>
+</html>
