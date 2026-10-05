@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "Projeto didático simples com Node.js, MongoDB, JWT, Swagger e PWA",
   "main": "src/server.js",
+  "engines": {
+    "node": ">=20.13"
+  },
   "scripts": {
-    "dev": "nodemon src/server.js",
+    "dev": "node --watch src/server.js",
     "start": "node src/server.js",
     "test": "node --test",
     "promote-admin": "node scripts/promote-admin.js"
@@ -17,8 +20,5 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.8.1",
     "swagger-ui-express": "^5.0.1"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.7"
   }
 }

@@ -4,7 +4,7 @@ Aplicação didática com Node.js, Express, MongoDB, Mongoose, JWT e frontend em
 
 ## Rodar localmente
 
-Requisitos: Node.js 18+ e MongoDB local ou uma instância no MongoDB Atlas.
+Requisitos: Node.js 20.13+ e MongoDB local ou uma instância no MongoDB Atlas.
 
 1. Copie `.env.example` para `.env` e configure `MONGO_URI` e `JWT_SECRET`.
 2. Instale as dependências com `npm i`.
