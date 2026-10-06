@@ -1,4 +1,4 @@
-# Portal de Saúde com JWT e PWA
+# Portal de Saúde com JWT e PWA (PRECISA MUDAR O NOME DO REPOSITORIO)
 
 Aplicação didática com Node.js, Express, MongoDB, Mongoose, JWT e frontend em HTML/CSS/JavaScript. O cadastro público diferencia pacientes (CPF) e médicos (CRM e especialidade); ambos usam o mesmo fluxo de login. A gestão da lista de contas é exclusiva do perfil `admin`.
 
